@@ -1,4 +1,4 @@
-dipstart.m;
+% dipstart.m;
 a = prnist([0:9],[1:1:1000]);
 
 a_2 = (closing(a));
