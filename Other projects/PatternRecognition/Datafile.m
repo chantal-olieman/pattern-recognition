@@ -1,5 +1,5 @@
 %% Data creation
-a = prnist([0:9], [1:200:1000]);
+a = prnist([0:9],[1:40:1000]);
 b = im_box(a, [], 1);
 c = im_resize(b, [32, 32]);
 [train,test] = gendat(c,0.8);
