@@ -1,2 +1,2 @@
 dip_initialise;
-dipsetpref('ImageFilePath', 'C:\Users\TU Delf SID\Documents\MATLAB\dip\images');
+dipsetpref('ImageFilePath', 'C:\Users\Chantal Olieman\Documents\MATLAB\dip\images');
