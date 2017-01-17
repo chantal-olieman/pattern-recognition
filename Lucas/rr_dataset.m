@@ -4,7 +4,10 @@ function [ a1 ] = rr_dataset( steps, upper )
 
 a = prnist([0:9],[1:steps:upper]);
 a = im_box(a, [], 1);
-
+featsize = [16,16];
+a = ((closing(opening(a))));
+figure(1)
+show(a)
 %processed_a = opening(closing(a));
 %boxed = im_box(processed_a, [], 1);
 %resized = im_resize(boxed, [20, 20]);
@@ -23,11 +26,15 @@ for i=1:10*num;
     angle = 0.5*atan((2*moment(2))/(moment(1)-moment(3)));
     rotated_im = a(i,:)*im_rotate(angle);
     binary_im = im2bw(data2im(rotated_im));
-    resized_binary_im = im_resize(binary_im, [20, 20]);
+    resized_binary_im = im_resize(binary_im, featsize);
     imList = [imList;double(resized_binary_im(:)')];
 end
 
-a1 = prdataset(imList, labels);
+a2 = prdataset(imList, labels);
+a1 = setfeatsize(a2, featsize);
+figure(2)
+show(a1)
+%a1 = (opening(closing(a2)));
 
 end
 
