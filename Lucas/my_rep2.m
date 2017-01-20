@@ -9,15 +9,15 @@ boxed = im_box(noise_removed, 0, 1); % Remove unnecessary rows, colums and make 
 %% Prepare Rotation 
 M = boxed*im_moments('central',[2 0; 1 1; 0 2]); % Determine moments
 imList = [];
-num =size(boxed,1);
+num = size(boxed,1);
 labels = [];
 k = 0;
 featsize = [16,16];
 
 %% Rotation procedure
-for i=1:10*num;
-    if(mod(i-1,num)==0 && i>1);
-        k = k + 1;
+for i=1:num;
+    if(mod(i-1,num/10)==0 && i>1);
+        k = k + 1
     end
     labels = [labels;num2str(k)];
     im = data2im(boxed(i,:));
