@@ -1,4 +1,5 @@
 function errors(a, p, n)
+
 % outputs all errors of classifiers
 parzencerror = 0;
 knncerror = 0;
@@ -51,6 +52,6 @@ for i=1:n;
 end
 
 m = [knncerror; parzencerror; fishercerror; nmcerror; ldcerror; qdcerror; svcerror; loglcerror; treecerror]/n;
-csvwrite('C:\Users\TU Delf SID\code\pattern-recognition\Lucas\csvlist.csv',m)
+csvwrite('C:\Users\Francesca\Documents\TU\csvlist.csv',m)
 
 end

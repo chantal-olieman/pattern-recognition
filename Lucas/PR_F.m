@@ -6,9 +6,12 @@
 %b = im_box(a_4, [], 1);
 %c = im_resize(b, [8, 8]);
 
-a = rr_dataset(50,1000);
+a = rr_dataset(200,1000); %50,1000 = 200
+
 %[train, test] = gendat(a,0.2);
-errors(a,0.5,10);
+
+%errors(a,0.1,10);
+
 % a1 = prnist([0:9],[1:50:1000]);
 % a1 = im_box(a1, [], 1);
 % featsize = [16,16];

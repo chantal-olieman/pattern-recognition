@@ -33,6 +33,8 @@ csvwrite('C:\Users\TU Delf SID\code\pattern-recognition\Lucas\rotated_images223.
 a1 = prdataset(imList, labels);
 a = setfeatsize(a1, featsize);
 
+a = a*filtim('extractHOGFeatures',{'Cellsize',[4 4]});
+
 
 end
 
