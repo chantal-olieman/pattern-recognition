@@ -1,4 +1,4 @@
-function errors(a, n)
+function m = errors(a, n)
 
 % outputs all errors of classifiers
 parzencerror = 0;
@@ -18,13 +18,13 @@ tested = test;
 for i=1:n;
     if(i~=1)
         if(i == n)
-            train = tested
+            train = tested;
             test = untested;
         else     
         [test,train] = gendat(untested,1/(n-i+1));
         untested = train; 
-        train = [train;tested]
-        tested = [tested;test] 
+        train = [train;tested];
+        tested = [tested;test];
         end    
     end 
    
@@ -55,8 +55,8 @@ for i=1:n;
     
     
     
-    w = treec(train);
-    treecerror = treecerror + test*w*testc;
+    %w = treec(train);
+    %treecerror = treecerror + test*w*testc;
     
     %bpxncerror
     %perlcerror
@@ -69,6 +69,6 @@ for i=1:n;
 end
 
 m = [knncerror; parzencerror; fishercerror; nmcerror; ldcerror; qdcerror; svcerror; loglcerror; treecerror]/n;
-csvwrite('C:\Users\Chantal Olieman\Projects\pattern-recognition\Results\csvlist.csv',m)
+csvwrite('C:\Users\Chantal Olieman\Projects\pattern-recognition\Results\csvlist.csv',m);
 
 end
