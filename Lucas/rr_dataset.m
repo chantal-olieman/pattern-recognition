@@ -1,4 +1,4 @@
-function [ a1 ] = rr_dataset( steps, upper )
+function [ a ] = rr_dataset( steps, upper )
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
 
