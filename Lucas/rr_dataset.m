@@ -1,4 +1,4 @@
-function [ a ] = rr_dataset( steps, upper )
+function [ aret ] = rr_dataset( steps, upper )
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -33,9 +33,9 @@ end
 
 %csvwrite('C:\Users\Francesca\Documents\TU\rotated_images223.csv',imList)
 a1 = prdataset(imList, labels);
-a = setfeatsize(a1, featsize);
+aret = setfeatsize(a1, featsize);
 
-a = a*filtim('extractHOGFeatures',{'Cellsize',[4 4]});
+a = aret*filtim('extractHOGFeatures',{'Cellsize',[4 4]});
 
 
 end
