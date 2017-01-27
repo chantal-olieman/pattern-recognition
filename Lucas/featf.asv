@@ -1,0 +1,34 @@
+a = rr_dataset(50, 1000);
+
+%select optimal # of features 
+%backwards 
+[w,r] = featselb(a);
+a1 = a*w;
+m1 = errors(a1, 10);
+
+%add size 
+z = size(w);
+featnum = z(1,2);
+m1 = [featnum ; m1];
+
+
+%forwards 
+[w,r] = featself(a);
+a2 = a*w;
+m2 = errors(a2, 10);
+
+%add size 
+z = size(w);
+featnum = z(1,2);
+m1 = [featnum ; m1];
+
+%backwards select optimal # features
+[w,r] = featselb(a);
+a1 = a*w;
+m1 = errors(a1, 10);
+
+%forwards select optimal # features 
+[w,r] = featself(a);
+a2 = a*w;
+m2 = errors(m2, 10);
+ 
