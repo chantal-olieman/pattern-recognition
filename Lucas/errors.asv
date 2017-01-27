@@ -10,24 +10,15 @@ qdcerror = 0;
 svcerror = 0;
 loglcerror = 0;
 treecerror = 0;
-
 untested = a;
-[test, train] = gendat(untested,1/n);
-untested = train; 
+[train,test] = gendat(untested,1/n);
 tested = test;
 for i=1:n;
-    if(i~=1)
-        if(i == n)
-            train = tested
-            test = untested;
-        else     
-        [test,train] = gendat(untested,1/(n-i+1));
-        untested = train; 
-        train = [train;tested]
-        tested = [tested;test] 
-        end    
-    end 
-   
+    if(
+    [train,test] = gendat(untested,1/n);
+    untested = train; 
+    train = [train;tested]
+    tested = [tested;test] 
     %[train,test] = gendat(a,p);
     w = parzenc(train);
     parzencerror = parzencerror + test*w*testc;

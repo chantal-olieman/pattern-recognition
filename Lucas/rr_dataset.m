@@ -31,7 +31,7 @@ for i=1:num;
     imList = [imList;double(resized_binary_im(:)')];
 end
 
-csvwrite('C:\Users\Francesca\Documents\TU\rotated_images223.csv',imList)
+%csvwrite('C:\Users\Francesca\Documents\TU\rotated_images223.csv',imList)
 a1 = prdataset(imList, labels);
 a = setfeatsize(a1, featsize);
 
